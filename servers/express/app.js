@@ -19,6 +19,7 @@ server.get('/h', (req, res) => {
 })
 
 server.get("/cat", (req, res) => {
+    // maybe talk about env vars - if there it time
     const key = "live_Z1fzCkUUkfLUfQ19unIPWauMXUUa54eQF6TwsL4XmWMMCPd1DxUVgzC616nPEaNO"
     const url = "https://api.thecatapi.com/v1/images/search?limit=11"
     fetch(url, {
