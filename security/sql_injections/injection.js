@@ -9,13 +9,21 @@ const connection = await mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'test',
+    namedPlaceholders: true,
+    multipleStatements: true, // <<< this is the key!
 });
 
 
 server.post('/name', async (req, res) => {
     const { firstName } = req.body
     try {
+        // not safe
         const [result] = await connection.query(`SELECT * FROM users WHERE firstName='${firstName}';`);
+        // safer
+        // const [result] = await connection.execute(
+        //     'SELECT * FROM users WHERE firstName = :firstName',
+        //     { firstName }
+        // );
         console.log(`result is: ${JSON.stringify(result)}`);
         res.json(result)
         return;
