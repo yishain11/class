@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Examples</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #f9f9f9;
+      }
+      .example {
+        margin-bottom: 60px;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid #ccc;
+        position: relative;
+      }
+      .label {
+        margin-bottom: 8px;
+        font-family: monospace;
+        font-size: 1.1em;
+        color: #333;
+      }
+      .static-box {
+        background: #e0f7fa;
+        color: #006064;
+        padding: 16px;
+        border: 2px dashed #006064;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .relative-box {
+        position: relative;
+        left: 40px;
+        top: 10px;
+        background: #fff3e0;
+        color: #e65100;
+        padding: 16px;
+        border: 2px solid #e65100;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .absolute-container {
+        position: relative;
+        height: 120px;
+        background: #f0f0f0;
+        border: 1px solid #bbb;
+        margin-bottom: 8px;
+        overflow: hidden;
+      }
+      .absolute-box {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 160px;
+        background: #f3e5f5;
+        color: #6a1b9a;
+        padding: 16px;
+        border: 2px solid #6a1b9a;
+        font-weight: bold;
+      }
+      .fixed-box {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: #c8e6c9;
+        color: #2e7d32;
+        padding: 16px;
+        border: 2px solid #2e7d32;
+        font-weight: bold;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .sticky-container {
+        height: 300px;
+        overflow: auto;
+        background: #e1f5fe;
+        border: 1px solid #81d4fa;
+        padding: 8px;
+        margin-bottom: 8px;
+        position: relative;
+      }
+      .sticky-box {
+        position: sticky;
+        top: 0;
+        background: #ffecb3;
+        color: #ff6f00;
+        padding: 16px;
+        border: 2px solid #ff6f00;
+        font-weight: bold;
+        margin-bottom: 8px;
+        z-index: 10;
+      }
+      .long-content {
+        height: 600px;
+        background: linear-gradient(to bottom, #fffde7 0%, #fff9c4 100%);
+        padding: 8px;
+        color: #888;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example">
+      <div class="label">1. <code>position: static</code> (default):</div>
+      <div class="static-box">
+        This box is <b>static</b>. It follows the normal document flow and
+        cannot be offset.
+      </div>
+      <div>
+        Static is the default position for all elements. No special positioning
+        is applied.
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">2. <code>position: relative</code>:</div>
+      <div class="relative-box">
+        This box is <b>relative</b>. It is offset <code>left: 40px</code> and
+        <code>top: 10px</code> from its normal position.
+      </div>
+      <div>
+        Relative positioning moves the element from its normal flow position,
+        but space is still reserved for it.
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">
+        3. <code>position: absolute</code> (inside a relative container):
+      </div>
+      <div class="absolute-container">
+        <div class="absolute-box">
+          This box is <b>absolute</b>. It is positioned <code>left: 20px</code>,
+          <code>top: 20px</code> inside its relative parent.
+        </div>
+        <div style="padding: 8px; color: #888">
+          The parent container is <code>position: relative</code>. Absolute
+          elements are removed from normal flow.
+        </div>
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">4. <code>position: fixed</code> (viewport):</div>
+      <div>
+        <span style="color: #888"
+          >Scroll the page to see the fixed box stay in the corner.</span
+        >
+      </div>
+      <!-- Fixed box is outside normal flow and stays in the same place in the viewport -->
+      <div class="fixed-box">
+        This box is <b>fixed</b>.<br />
+        It stays in the bottom-right corner of the viewport.
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">
+        5. <code>position: sticky</code> (sticks while scrolling):
+      </div>
+      <div class="sticky-container">
+        <div class="sticky-box">
+          This box is <b>sticky</b>.<br />
+          It sticks to the top of its scrollable container when you scroll down.
+        </div>
+        <div class="long-content">
+          Scroll this container.<br />
+          The sticky box will remain visible at the top until you scroll past
+          its parent.<br /><br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          euismod, nisi eu consectetur cursus, nisl erat dictum enim, nec dictum
+          urna erat nec erat. Suspendisse potenti. Etiam euismod, urna eu
+          tincidunt consectetur, nisi nisl aliquam enim, nec dictum urna erat
+          nec erat. <br /><br />
+          More content...<br />
+          Keep scrolling to see the sticky effect!
+        </div>
+      </div>
+      <div>
+        <b>Sticky</b> positioning keeps the element in normal flow until a
+        threshold is reached (e.g., <code>top: 0</code>), then it "sticks" to
+        that position as you scroll within its parent.
+      </div>
+    </div>
+  </body>
+</html>

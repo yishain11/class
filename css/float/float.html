@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float Examples</title>
+    <style>
+      .example {
+        margin-bottom: 40px;
+      }
+      .container {
+        background: #f0f0f0;
+        padding: 16px;
+        border: 1px solid #ccc;
+        min-height: 100px;
+      }
+      .float-left {
+        float: left;
+        width: 120px;
+        height: 80px;
+        background: #b3e5fc;
+        color: #01579b;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border: 2px solid #01579b;
+      }
+      .float-right {
+        float: right;
+        width: 120px;
+        height: 80px;
+        background: #ffe0b2;
+        color: #e65100;
+        margin-left: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border: 2px solid #e65100;
+      }
+      .clear {
+        clear: both;
+        background: #c8e6c9;
+        color: #2e7d32;
+        padding: 8px;
+        border: 1px dashed #2e7d32;
+        margin-top: 8px;
+      }
+      .label {
+        margin-bottom: 8px;
+        font-family: monospace;
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example">
+      <div class="label">1. Float Left:</div>
+      <div class="container">
+        <div class="float-left">Floated Left</div>
+        <div>
+          This text wraps around the floated box. The floated element is taken
+          out of normal flow and other content flows around it.
+        </div>
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">2. Float Right:</div>
+      <div class="container">
+        <div class="float-right">Floated Right</div>
+        <div>
+          This text wraps around the floated box on the right. Floats can be
+          used for layouts like images with text.
+        </div>
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">3. Clearing Floats:</div>
+      <div class="container">
+        <div class="float-left">Floated Left</div>
+        <div class="float-right">Floated Right</div>
+        <div>
+          Both left and right floats are used here. The following element uses
+          <code>clear: both</code> to move below the floated boxes.
+        </div>
+        <div class="clear">
+          This element is cleared and appears below the floats.
+        </div>
+      </div>
+    </div>
+    <div class="example">
+      <div class="label">4. No Float (Normal Flow):</div>
+      <div class="container">
+        <div
+          style="
+            width: 120px;
+            height: 80px;
+            background: #f3e5f5;
+            color: #6a1b9a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid #6a1b9a;
+            margin-bottom: 8px;
+          "
+        >
+          Normal Block
+        </div>
+        <div>
+          This block is not floated. Content appears below it, following the
+          normal document flow.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
