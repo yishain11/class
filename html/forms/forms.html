@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Forms - Main Tags & Configurations</title>
+  </head>
+  <body>
+    <h1>HTML Forms - Main Tags & Configurations</h1>
+    <form action="/submit" method="post" enctype="multipart/form-data">
+      <!-- Text Input -->
+      <fieldset>
+        <legend>Text Input</legend>
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username"
+          required
+        />
+      </fieldset>
+
+      <!-- Password Input -->
+      <fieldset>
+        <legend>Password Input</legend>
+        <label for="pwd">Password:</label>
+        <input
+          type="password"
+          id="pwd"
+          name="pwd"
+          placeholder="Enter password"
+          required
+        />
+      </fieldset>
+
+      <!-- Email Input -->
+      <fieldset>
+        <legend>Email Input</legend>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="user@example.com"
+          required
+        />
+      </fieldset>
+
+      <!-- Number Input -->
+      <fieldset>
+        <legend>Number Input</legend>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" max="120" step="1" />
+      </fieldset>
+
+      <!-- File Input -->
+      <fieldset>
+        <legend>File Input</legend>
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" />
+      </fieldset>
+
+      <!-- Image Input (as submit button) -->
+      <fieldset>
+        <legend>Image Input (Submit Button)</legend>
+        <input
+          type="image"
+          src="https://via.placeholder.com/100x40?text=Submit"
+          alt="Submit"
+          width="100"
+          height="40"
+        />
+      </fieldset>
+
+      <!-- Radio Buttons: Same name (grouped) -->
+      <fieldset>
+        <legend>Radio Buttons (Same name - grouped)</legend>
+        <label>
+          <input type="radio" name="gender" value="male" checked /> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" /> Female
+        </label>
+        <label>
+          <input type="radio" name="gender" value="other" /> Other
+        </label>
+      </fieldset>
+
+      <!-- Radio Buttons: Different names (not grouped) -->
+      <fieldset>
+        <legend>Radio Buttons (Different names - not grouped)</legend>
+        <label>
+          <input type="radio" name="option1" value="A" /> Option A
+        </label>
+        <label>
+          <input type="radio" name="option2" value="B" /> Option B
+        </label>
+      </fieldset>
+
+      <!-- Checkboxes: Same name (multiple values) -->
+      <fieldset>
+        <legend>Checkboxes (Same name - multiple values)</legend>
+        <label>
+          <input type="checkbox" name="hobby[]" value="reading" /> Reading
+        </label>
+        <label>
+          <input type="checkbox" name="hobby[]" value="sports" /> Sports
+        </label>
+        <label>
+          <input type="checkbox" name="hobby[]" value="music" /> Music
+        </label>
+      </fieldset>
+
+      <!-- Checkboxes: Different names -->
+      <fieldset>
+        <legend>Checkboxes (Different names)</legend>
+        <label>
+          <input type="checkbox" name="subscribe_newsletter" value="yes" />
+          Subscribe to newsletter
+        </label>
+        <label>
+          <input type="checkbox" name="accept_terms" value="yes" /> Accept terms
+        </label>
+      </fieldset>
+
+      <!-- Select Dropdown -->
+      <fieldset>
+        <legend>Select Dropdown</legend>
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">--Select--</option>
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+      </fieldset>
+
+      <!-- Select Multiple -->
+      <fieldset>
+        <legend>Select Multiple</legend>
+        <label for="languages">Languages:</label>
+        <select id="languages" name="languages[]" multiple>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+        </select>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
