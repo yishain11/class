@@ -1,0 +1,17 @@
+create table total_money(
+	id int AUTO_INCREMENT PRIMARY KEY,
+    money INT
+);
+
+INSERT INTO total_money(id,money) VALUES(1,0);
+DELIMITER $$
+CREATE TRIGGER calc_money_total
+AFTER INSERT ON chocolate_store_sales
+FOR EACH ROW
+BEGIN
+	UPDATE total_money
+    	SET money = (SELECT SUM(total_sum) FROM chocolate_store_sales)
+    WHERE id=1;
+END$$
+DELIMITER ;
+
