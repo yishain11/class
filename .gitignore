@@ -1,0 +1,54 @@
+
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# Cache and build
+dist/
+build/
+.cache/
+.next/
+out/
+
+# Coverage reports
+coverage/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional npm logs
+.npm/
+
+# TypeScript
+*.tsbuildinfo
+
+# Binaries
+*.exe
+*.out
+*.app
+
+# Optional lock files (depends on your package manager)
+# Uncomment only the one you use:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
