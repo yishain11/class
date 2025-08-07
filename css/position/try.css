@@ -1,0 +1,38 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100vh;
+}
+
+
+section {
+    border: 1px solid red;
+    height: 100px;
+}
+
+html {
+    background-color: cyan;
+}
+
+main {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: darkslategrey;
+}
+
+#s1 {
+    background-color: blue;
+}
+
+#s2 {
+    background-color: green;
+}
+
+#s3 {
+    background-color: purple;
+}
+
+#s4 {
+    background-color: magenta;
+}

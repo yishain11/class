@@ -1,0 +1,20 @@
+{
+  "name": "supabase",
+  "version": "1.0.0",
+  "main": "connect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.51.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "postgres": "^3.4.7",
+    "supabase": "^2.31.4"
+  }
+}
