@@ -1,0 +1,23 @@
+p {
+  font-family: "Playwrite AU QLD";
+}
+
+p::first-letter {
+  font-size: 100px;
+}
+
+p::first-line {
+  font-size: 50px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid black;
+  color: black;
+}
+
+input[type="checkbox"]:checked ~ .card p {
+  background-color: darkblue;
+  border: 1px solid lightblue;
+  color: white;
+}
