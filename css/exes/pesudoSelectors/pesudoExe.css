@@ -1,3 +1,20 @@
-h1 {
-  color: red;
+.card {
+  color: black;
+  background-color: lightblue;
+  border: 1px solid black;
+  width: 20vw;
+  height: 20vh;
+}
+
+input[type="checkbox"]:checked ~ .card {
+  color: white;
+  background-color: darkblue;
+  border: 1px solid wheat;
+}
+
+.card:hover {
+  width: 21vw;
+  height: 21vh;
+  font-size: large;
+  box-shadow: 2px 4px;
 }
