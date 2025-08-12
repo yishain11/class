@@ -1,1 +1,230 @@
-`
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather — Snow & Rain CSS Animations</title>
+    <style>
+      :root {
+        --bg: hsl(220 18% 10%);
+        --bg-elev: hsl(220 20% 12% / 0.6);
+        --card: hsl(220 22% 14% / 0.65);
+        --text: hsl(220 20% 95%);
+        --muted: hsl(220 15% 75%);
+        --brand: hsl(200 85% 56%);
+        --accent: hsl(270 90% 65%);
+        --radius: 20px;
+        --shadow: 0 10px 25px hsl(220 40% 1% / 0.35);
+        --blur: 12px;
+        --precip-opacity: 0.8;
+        --precip-layer1: radial-gradient(
+            circle at 20px 30px,
+            hsl(0 0% 100% / 1) 0 3px,
+            transparent 3.5px
+          ),
+          radial-gradient(
+            circle at 120px 80px,
+            hsl(0 0% 100% / 1) 0 2.8px,
+            transparent 3.3px
+          ),
+          radial-gradient(
+            circle at 60px 140px,
+            hsl(0 0% 100% / 1) 0 3.1px,
+            transparent 3.6px
+          );
+        --precip-layer2: radial-gradient(
+            circle at 40px 60px,
+            hsl(0 0% 100% / 1) 0 2.6px,
+            transparent 3.1px
+          ),
+          radial-gradient(
+            circle at 160px 20px,
+            hsl(0 0% 100% / 1) 0 2.8px,
+            transparent 3.3px
+          ),
+          radial-gradient(
+            circle at 100px 110px,
+            hsl(0 0% 100% / 1) 0 2.6px,
+            transparent 3.1px
+          );
+        --precip-size1: 200px 200px;
+        --precip-size2: 220px 220px;
+        --fall1: snowFall 18s linear infinite;
+        --fall2: snowFall 28s linear infinite;
+        --angle: 0deg;
+      }
+      :root:has(#mode-rain:checked) {
+        --precip-opacity: 0.7;
+        --angle: 14deg;
+        --precip-layer1: repeating-linear-gradient(
+          var(--angle),
+          hsl(200 90% 90% / 1) 0 2px,
+          transparent 2px 8px
+        );
+        --precip-layer2: repeating-linear-gradient(
+          var(--angle),
+          hsl(200 90% 90% / 1) 0 2px,
+          transparent 2px 10px
+        );
+        --precip-size1: 160px 140px;
+        --precip-size2: 220px 190px;
+        --fall1: rainFall 2.5s linear infinite;
+        --fall2: rainFall 4s linear infinite;
+      }
+      [data-theme="light"] {
+        --bg: hsl(220 40% 96%);
+        --bg-elev: hsl(220 30% 94% / 0.75);
+        --card: hsl(220 32% 98% / 0.65);
+        --text: hsl(220 20% 12%);
+        --muted: hsl(220 15% 40%);
+        --shadow: 0 10px 25px hsl(220 40% 60% / 0.2);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica,
+          Arial;
+        color: var(--text);
+        background: var(--bg);
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow-x: hidden;
+      }
+      .precip,
+      .precip::before,
+      .precip::after {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+      }
+      .precip {
+        z-index: 0;
+      }
+      .precip::before,
+      .precip::after {
+        content: "";
+        opacity: var(--precip-opacity);
+        background-image: var(--precip-layer1);
+        background-size: var(--precip-size1);
+        animation: var(--fall1);
+      }
+      .precip::after {
+        background-image: var(--precip-layer2);
+        background-size: var(--precip-size2);
+        animation: var(--fall2);
+      }
+      @keyframes snowFall {
+        0% {
+          transform: translate3d(-10px, -100%, 0);
+        }
+        100% {
+          transform: translate3d(10px, 100%, 0);
+        }
+      }
+      @keyframes rainFall {
+        0% {
+          transform: translate3d(-15vw, -100%, 0);
+        }
+        100% {
+          transform: translate3d(15vw, 100%, 0);
+        }
+      }
+      header {
+        z-index: 2;
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(var(--blur));
+        background: var(--bg-elev);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 12px;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 10px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+      }
+      .logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--brand), var(--accent));
+      }
+      .theme-toggle {
+        cursor: pointer;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        background: var(--brand);
+        color: white;
+      }
+      main {
+        z-index: 1;
+        padding: 20px;
+      }
+      .search {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        background: var(--card);
+        padding: 12px;
+        border-radius: var(--radius);
+      }
+      .search input {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+      }
+      .btn {
+        background: var(--accent);
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div aria-hidden="true" class="precip"></div>
+    <header>
+      <div class="wrap">
+        <div class="brand">
+          <div class="logo"></div>
+          <span>SkyLook</span>
+        </div>
+        <fieldset class="seg">
+          <input type="radio" name="mode" id="mode-snow" checked />
+          <label for="mode-snow">Snow</label>
+          <input type="radio" name="mode" id="mode-rain" />
+          <label for="mode-rain">Rain</label>
+        </fieldset>
+        <button
+          class="theme-toggle"
+          onclick="document.body.dataset.theme = document.body.dataset.theme==='light' ? '' : 'light'"
+        >
+          Toggle Theme
+        </button>
+      </div>
+    </header>
+    <main>
+      <form class="search">
+        <input type="text" placeholder="Search city…" />
+        <button class="btn">Search</button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+main {
+    width: 500px;
+    display: flex;
+    height: 500px;
+    background-color: blue;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.card {
+    background-color:lightcoral;
+    border: 1px solid gray;
+    width: 20%;
+    height: 20%;
+}
+
+#s2 {
+}
