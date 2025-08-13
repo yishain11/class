@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="out"></div>
+    <script>
+      let x = 1;
+      function show(a = x) {
+        let x = 2;
+        document.getElementById("out").textContent = a.toString();
+      }
+      show();
+    </script>
+  </body>
+</html>
