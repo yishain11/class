@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    <section></section>
+
+    <!-- i want to turn every li element i click on to uupercase. how do we do this? -->
+
+    <script>
+      // option 1 - event listeners
+      const lis = document.getElementsByTagName("li");
+      for (const li of lis) {
+        li.addEventListener("click", (e) => {
+          li.innerText = li.innerText.toUpperCase();
+        });
+      }
+
+      // looks ok. but what if i add a button that can add li dynamically?
+      // i need to add again the event listener for every created li!
+
+      const btn = document.createElement("button");
+      const section = document.getElementsByTagName("section")[0];
+      const ul = document.getElementsByTagName("ul")[0];
+
+      btn.innerText = "add new li";
+      section.appendChild(btn);
+
+      btn.addEventListener("click", () => {
+        const li = document.createElement("li");
+        li.innerText = "new li!";
+        ul.appendChild(li);
+      });
+
+      // click on the new li - no functionality!
+
+      //   option 2 - deligation
+      document
+        .getElementById("menu")
+        .addEventListener("click", function (event) {
+          if (event.target.tagName === "LI") {
+            event.target.innerText = event.target.innerText.toUpperCase();
+          }
+        });
+    </script>
+  </body>
+</html>

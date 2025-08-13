@@ -1,3 +1,7 @@
+main section:nth-child(odd) {
+  color: red;
+}
+
 .card {
   color: black;
   background-color: lightblue;
