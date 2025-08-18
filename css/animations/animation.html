@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #box {
+        width: 100px;
+        height: 200px;
+        background-color: red;
+        margin: auto;
+      }
+      #box:hover {
+        animation: move 10s ease-in infinite alternate-reverse;
+      }
+      @keyframes move {
+        10% {
+          transform: translateX(-150px);
+          background-color: lightcoral;
+        }
+        20% {
+          transform: translateY(150px);
+          background-color: rgb(82, 233, 12);
+        }
+        50% {
+          transform: translateX(-150px);
+          background-color: rgb(217, 20, 214);
+        }
+        50% {
+          transform: translate(150px, 150px);
+          background-color: rgb(183, 234, 15);
+        }
+        75% {
+          transform: translate(-150px, 100px);
+          background-color: rgb(10, 55, 222);
+        }
+      }
+    </style>
+    <div id="box"></div>
+  </body>
+</html>
