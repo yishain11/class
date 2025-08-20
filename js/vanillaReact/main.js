@@ -7,9 +7,9 @@ window.loadPage = async (pageType = "mainNewsPage", data) => {
     if (main) {
         main.remove()
     }
+    const news = JSON.parse(await loadNews())
     switch (pageType) {
         case "mainNewsPage":
-            const news = JSON.parse(await loadNews())
             main = loadMainNewsPage(news, main, currentPage)
             break;
         case "expandedNewsPage":
