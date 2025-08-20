@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #box1 {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: green;
+        animation: m1 10s infinite;
+      }
+      @keyframes m1 {
+        10% {
+          transform: translate(40vw, 40vh);
+        }
+        50% {
+          transform: translate(30vw, 0);
+        }
+        75% {
+          transform: translate(0, 50vh);
+        }
+      }
+    </style>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+  </body>
+</html>
