@@ -1,0 +1,15 @@
+#expandedPageMain {
+  width: 100%;
+  min-height: 80dvh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}
+
+#newsArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

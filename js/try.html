@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
   <body>
-    <div id="out"></div>
+    <div id="wrap"></div>
     <script>
-      let x = 1;
-      function show(a = x) {
-        let x = 2;
-        document.getElementById("out").textContent = a.toString();
-      }
-      show();
+      wrap.addEventListener("click", (e) => {
+        if (e.target.localName === "button") {
+          e.target.textContent = e.target.textContent.toLowerCase();
+        }
+      });
+      const btn = document.createElement("button");
+      btn.textContent = "Run";
+      wrap.appendChild(btn);
     </script>
   </body>
 </html>

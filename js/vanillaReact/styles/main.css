@@ -1,0 +1,36 @@
+/* Mini reset + full-screen body */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div#root {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+div#root {
+  min-height: 100dvh;
+  min-width: 100dvw;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
