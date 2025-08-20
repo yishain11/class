@@ -1,6 +1,6 @@
 function generateMainNewsPage(shortNewsData) {
     const main = document.createElement("main")
-    const navbar = genNavbar(["main", "addStory"])
+    const navbar = genNavbar()
     main.appendChild(navbar)
     const articleContainer = document.createElement("section")
     articleContainer.setAttribute("id", "articleContainer")
