@@ -1,0 +1,9 @@
+.dark {
+  background-color: darkblue;
+  color: wheat;
+}
+
+.light {
+  background-color: lightblue;
+  color: darkblue;
+}
