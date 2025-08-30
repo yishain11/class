@@ -1,0 +1,15 @@
+section.productData {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: aqua;
+  width: 90%;
+  justify-self: flex-start;
+}
+
+div#productContainer {
+  border: 1px solid lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

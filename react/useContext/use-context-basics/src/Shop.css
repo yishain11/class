@@ -1,0 +1,7 @@
+.container {
+  width: 80vw;
+  margin: auto;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+}

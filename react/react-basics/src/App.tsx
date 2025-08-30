@@ -9,7 +9,7 @@ import StyleASVar from "./StyleAsVar.tsx";
 function App() {
   return (
     <>
-      my first component
+      {/* my first component */}
       <MyComponent />
       {/* lowercase comp */}
       {/* <lowerCaseComp /> - error: The tag <lowerCaseComp> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter */}
